@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OSINTClientAPI", "OSINTClientAPI.csproj", "{CC76375F-E5E6-432D-94FF-A2538E488DEC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC76375F-E5E6-432D-94FF-A2538E488DEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC76375F-E5E6-432D-94FF-A2538E488DEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC76375F-E5E6-432D-94FF-A2538E488DEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC76375F-E5E6-432D-94FF-A2538E488DEC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC353510-9838-4645-B7A4-2C78BC9D855B}
+	EndGlobalSection
+EndGlobal
