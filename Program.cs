@@ -18,12 +18,15 @@ namespace OSINTClientAPI
 			var builder = WebAssemblyHostBuilder.CreateDefault(args);
 			builder.RootComponents.Add<App>("#app");
 
-			builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.Configuration["api_base_url"]) });
+			builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://api.spacex.land/")});
 
 			builder.Services.AddHttpClient<ISpaceXDataService, RESTSpaceXDataService>
-				(sp => sp.BaseAddress = new Uri(builder.Configuration["api_base_url"]));
+				(sp => sp.BaseAddress = new Uri("https://api.spacex.land/"));
 			await builder.Build().RunAsync();
+
+			//builder.Services.AddHttpClient<ISpaceXDataService, RESTSpaceXDataService>
+			//	(sp => sp.BaseAddress = new Uri("https://google-search3.p.rapidapi.com/api/v1/search/"));
+			//await builder.Build().RunAsync();
 		}
 	}
 }
- 
