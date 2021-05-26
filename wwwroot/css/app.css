@@ -23,6 +23,13 @@ a, .btn-link {
     color: var(--link);
 }
 
+.div.mystyle {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
 .alert-secondary {
     background-color: var(--highlight2);
     color: var(--font-color);
@@ -31,7 +38,6 @@ a, .btn-link {
 .table {
     color: var(--font-color);
 }
-
 
 .div.main{
     background-color: var(--background);

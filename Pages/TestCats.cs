@@ -4,20 +4,22 @@ using OSINTClientAPI.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 
 namespace OSINTClientAPI.Pages
 {
-	public partial class Launches
+	public partial class TestCats
 	{
 		[Inject]
-		ISpaceXDataService SpaceXDataService { get; set; }
+		ITestCats TestCatsService { get; set; }
 
-		private LaunchDto[] launches;
+		private TestCatsDto[] cats;
 
 		protected override async Task OnInitializedAsync()
 		{
-			launches = await SpaceXDataService.GetAllLaunches();
+			cats = await TestCatsService.GetCatInfo();
 		}
 	}
 }

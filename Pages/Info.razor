@@ -1,0 +1,17 @@
+﻿@page "/info"
+@inject HttpClient _httpClient
+<h3>Info Page</h3>
+<div>
+	<label>Shodan Address:</label><label>@shodanAddress</label>
+	<label>TestCats Address:</label><label>@testCatsAddress</label>
+</div>
+
+@code {
+	string shodanAddress;
+	string testCatsAddress;
+
+	protected override void OnInitialized()
+	{
+		base.OnInitialized();
+	}
+}

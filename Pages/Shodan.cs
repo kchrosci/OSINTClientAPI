@@ -1,24 +1,24 @@
 ﻿using Microsoft.AspNetCore.Components;
+using OSINTClientAPI.DataServices;
 using OSINTClientAPI.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Json;
 using System.Threading.Tasks;
 
 namespace OSINTClientAPI.Pages
 {
-	public partial class FetchData
-	{	
+	public partial class Shodan
+	{
 		[Inject]
-		private HttpClient Http { get; set; }  
+		IShodanSearch ShodanData { get; set; }
 
-		private LaunchDto[] launches;
+		private ShodanDto[] shodan;
+
 
 		protected override async Task OnInitializedAsync()
 		{
-			launches = await Http.GetFromJsonAsync<LaunchDto[]>("/rest/launches/");
+			shodan = await ShodanData.GetQueryResponse();
 		}
 	}
 }

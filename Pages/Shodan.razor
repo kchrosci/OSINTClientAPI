@@ -1,0 +1,43 @@
+﻿@page "/shodan"
+<h1>Shodan</h1>
+
+<p>This place to make reconneisance queries via Shodan REST API</p>
+<!--
+<div class="form-group">
+	<textarea class="form-control col-md-6" placeholder="Type your query"></textarea>
+	<small class="form-text text-muted">Type text inside to be searched.</small>
+</div>
+
+<button class="btn btn-success" type="button">
+	<span class="oi oi-magnifying-glass"></span> Search
+</button>
+-->
+
+@if (shodan == null)
+{
+	<p><em>Loading...</em></p>
+}
+else
+{
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Country Name</th>
+				<th>Country Code</th>
+				<th>ISP</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var launch in shodan)
+			{
+				<tr>
+					<td>@launch.CountryName</td>
+					<td>@launch.CountryCode</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+}
+@code {
+
+}

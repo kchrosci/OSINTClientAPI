@@ -1,0 +1,35 @@
+﻿@page "/testcats"
+
+
+<h1>Funny Cats Curiosity</h1>
+
+<p>Check data to get some curio about cats!</p>
+
+@if (cats == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>SentCount</th>
+                <th>Source</th>
+                <th>Text</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var info in cats)
+            {
+                <tr>
+                    <td>@info.Id</td>
+                    <td>@info.SentCount</td>
+                    <td>@info.Source</td>
+                    <td>@info.Text</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
