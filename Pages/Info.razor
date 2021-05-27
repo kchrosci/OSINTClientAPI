@@ -1,7 +1,7 @@
 ﻿@page "/info"
-@inject DataServices.ISpaceXDataService rocket;
 @inject DataServices.ITestCats cat;
 @inject DataServices.IShodanSearch shodan;
+@inject DataServices.IWaybackMachine machine;
 
 
 <h1>Info Page</h1>
@@ -10,7 +10,7 @@
 	<ul>
 		<li><label>Shodan Address:</label><label>@shodanAddress</label></li>
 		<li><label>TestCats Address:</label><label>@testCatsAddress</label></li>
-		<li><label>Rocket Address:</label><label>@rocketAddress</label></li>
+		<li><label>Wayback Machine Address:</label><label>@waybackMachineAddress</label></li>
 		<li><label>Rocket Address:</label><label>@virusTotalAddress</label></li>
 	</ul>
 </div>
@@ -18,7 +18,7 @@
 @code {
 	string shodanAddress;
 	string testCatsAddress;
-	string rocketAddress;
+	string waybackMachineAddress;
 	string virusTotalAddress;
 
 	protected override void OnInitialized()
@@ -26,8 +26,9 @@
 		base.OnInitialized();
 		testCatsAddress = cat.GetBaseUrl();
 		shodanAddress = shodan.GetBaseUrl();
-		rocketAddress = rocket.GetBaseUrl();
-		virusTotalAddress = rocket.GetBaseUrl();
+		waybackMachineAddress = machine.GetBaseUrl();
+
+		//virusTotalAddress = rocket.GetBaseUrl();
 
 	}
 }

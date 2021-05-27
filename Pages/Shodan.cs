@@ -14,11 +14,16 @@ namespace OSINTClientAPI.Pages
 		IShodanSearch ShodanData { get; set; }
 		string IpAddress { get; set; }
 		private ShodanDto shodan;
+		public static int num { get; set; } = 0;
 
 
 		protected async Task BeginSearch()
-		{	
+		{
 			shodan = await ShodanData.GetSearchResponse(IpAddress);
+		}
+		protected async Task SaveToTxt()
+		{
+
 		}
 	}
 }

@@ -14,8 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DataServices\DataShodanService\" />
-    <Folder Include="DataServices\CensysOS\" />
     <Folder Include="wwwroot\css\Resources\" />
   </ItemGroup>
 

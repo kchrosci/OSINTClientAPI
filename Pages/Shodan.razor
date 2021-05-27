@@ -8,7 +8,7 @@
 	<small class="form-text text-muted">Type text inside to be searched.</small>
 </div>
 
-<button class="btn btn-primary" type="button" @onclick="BeginSearch">
+<button class="btn btn-success" type="button" @onclick="BeginSearch">
 	<span class="oi oi-arrow-thick-bottom"></span> Search
 </button>
 
@@ -21,22 +21,42 @@ else
 	<table class="table">
 		<thead>
 			<tr>
-				<th>Country Name</th>
-				<th>Country Code</th>
+				<th>IP</th>
 				<th>ISP</th>
-				<th>Hostnames</th>
+				<th>ORG</th>
+				<th>CountryName</th>
+				<th>CountryCode</th>
+				<th>RegionCode</th>
+				<th>City</th>
+				<th>Latitude</th>
+				<th>Longitude</th>
+				<th>LastUpdate</th>
 			</tr>
 		</thead>
 		<tbody>
 
 			<tr>
-				<td>@shodan.RegionCode</td>
+				<td>@shodan.IpStr</td>
+				<td>@shodan.Isp</td>
+				<td>@shodan.Org</td>
+				<td>@shodan.CountryName</td>
 				<td>@shodan.CountryCode</td>
+				<td>@shodan.RegionCode</td>
+				<td>@shodan.City</td>
+				<td>@shodan.Latitude</td>
+				<td>@shodan.Longitude</td>
+				<td>@shodan.LastUpdate</td>
 			</tr>
 
 		</tbody>
 	</table>
 }
+
+<button class="btn btn-primary" type="button" @onclick="SaveToTxt">
+	<span class="oi oi-arrow-thick-bottom"></span> Save Result
+</button>
+
 @code {
 	
+
 }

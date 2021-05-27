@@ -8,16 +8,7 @@ namespace OSINTClientAPI.DTOs
 {
     public partial class TestCatsDto
     {
-        [JsonPropertyName("_id")]
-        public string Id { get; set; }
-
         [JsonPropertyName("text")]
         public string Text { get; set; }
-
-        [JsonPropertyName("source")]
-        public string Source { get; set; }
-
-        [JsonPropertyName("sentCount")]
-        public long SentCount { get; set; }
     }
 }

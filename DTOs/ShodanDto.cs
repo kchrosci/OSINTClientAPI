@@ -26,32 +26,17 @@ namespace OSINTClientAPI.DTOs
 		[JsonPropertyName("latitude")]
 		public double Latitude { get; set; }
 
-		[JsonPropertyName("hostnames")]
-		public string[] Hostnames { get; set; }
+		[JsonPropertyName("org")]
+		public string Org { get; set; }
 
-		//[JsonPropertyName("org")]
-		//public string Org { get; set; }
+		[JsonPropertyName("isp")]
+		public string Isp { get; set; }
 
-		//[JsonPropertyName("asn")]
-		//public string Asn { get; set; }
+		[JsonPropertyName("longitude")]
+		public double Longitude { get; set; }
 
-		//[JsonPropertyName("isp")]
-		//public string Isp { get; set; }
-
-		//[JsonPropertyName("longitude")]
-		//public double Longitude { get; set; }
-
-		//[JsonPropertyName("country_code3")]
-		//public object CountryCode3 { get; set; }
-
-		//[JsonPropertyName("domains")]
-		//public string[] Domains { get; set; }
-
-		//[JsonPropertyName("ip_str")]
-		//public string IpStr { get; set; }
-
-		//[JsonPropertyName("os")]
-		//public object Os { get; set; }
+		[JsonPropertyName("ip_str")]
+		public string IpStr { get; set; }
 
 		//[JsonPropertyName("ports")]
 		//public long[] Ports { get; set; }

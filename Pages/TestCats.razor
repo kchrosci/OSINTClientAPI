@@ -3,7 +3,7 @@
 
 <h1>Funny Cats Curiosity</h1>
 
-<p>Check data to get some curio about cats!</p>
+<p>Daily dose of funny cat's curious!</p>
 
 @if (cats == null)
 {
@@ -14,9 +14,6 @@ else
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>SentCount</th>
-                <th>Source</th>
                 <th>Text</th>
             </tr>
         </thead>
@@ -24,9 +21,6 @@ else
             @foreach (var info in cats)
             {
                 <tr>
-                    <td>@info.Id</td>
-                    <td>@info.SentCount</td>
-                    <td>@info.Source</td>
                     <td>@info.Text</td>
                 </tr>
             }

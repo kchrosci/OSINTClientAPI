@@ -1,0 +1,55 @@
+﻿@page "/wayback"
+<h1>Wayback Machine</h1>
+
+<p>using this section the user is able to download information about page from the archive.</p>
+
+<div class="form-group">
+	<textarea class="form-control col-md-6" placeholder="Enter URL e.g. facebook.com" @bind-value="Url" @bind-value:event="oninput"></textarea>
+	<small class="form-text text-muted">Type text inside to be searched.</small>
+</div>
+<div class="form-group">
+	<textarea class="form-control col-md-6" placeholder="Enter timestamp in format (YYYYMMDDhhmmss) e.g.20060101 " @bind-value="Timestamp" @bind-value:event="oninput"></textarea>
+	<small class="form-text text-muted">Type text inside to be searched.</small>
+</div>
+
+<button class="btn btn-success" type="button" @onclick="BeginSearch">
+	<span class="oi oi-arrow-thick-bottom"></span> Search
+</button>
+
+@if (wayback == null)
+{
+
+}
+else
+{
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Selected URL</th>
+				<th>Selected Timestamp</th>
+				<th>Status</th>
+				<th>Availability</th>
+				<th>URL to archive</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr>
+				<td>@wayback.Url</td>
+				<td>@wayback.Timestamp</td>
+				<td>@wayback.ArchivedSnapshots.Closest.Status</td>
+				<td>@wayback.ArchivedSnapshots.Closest.Available</td>
+				<a href="@wayback.ArchivedSnapshots.Closest.Url.ToString()"><td>@wayback.ArchivedSnapshots.Closest.Url.ToString()</td></a>
+			</tr>
+		</tbody>
+	</table>
+}
+
+<button class="btn btn-primary" type="button" @onclick="SaveToTxt">
+	<span class="oi oi-arrow-thick-bottom"></span> Save Result
+</button>
+
+@code {
+	
+
+}

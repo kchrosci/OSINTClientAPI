@@ -1,7 +1,4 @@
 ﻿using OSINTClientAPI.DTOs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
@@ -24,7 +21,7 @@ namespace OSINTClientAPI.DataServices
 
 		public async Task<TestCatsDto[]> GetCatInfo()
 		{
-			return await _httpClient.GetFromJsonAsync<TestCatsDto[]>("facts/random?animal_type=cat&amount=2");
+			return await _httpClient.GetFromJsonAsync<TestCatsDto[]>("facts/random?animal_type=cat&amount=8");
 		}
 	}
 }

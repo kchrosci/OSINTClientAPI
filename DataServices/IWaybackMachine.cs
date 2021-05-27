@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace OSINTClientAPI.DataServices
 {
-	public interface ISpaceXDataService
+	public interface IWaybackMachine
 	{
-		Task<LaunchDto[]> GetAllLaunches();
+		Task<WaybackDto> GetSearchResponse(string url, string timestamp);
+		Task<WaybackDto> GetSearchResponse(string url);
 		public string GetBaseUrl();
 	}
 }
