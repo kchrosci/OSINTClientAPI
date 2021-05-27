@@ -2,16 +2,17 @@
 @inject DataServices.ITestCats cat;
 @inject DataServices.IShodanSearch shodan;
 @inject DataServices.IWaybackMachine machine;
+@inject DataServices.IVirusTotal virus;
 
 
 <h1>Info Page</h1>
 <h3>Endopints used:</h3>
 <div>
 	<ul>
-		<li><label>Shodan Address:</label><label>@shodanAddress</label></li>
-		<li><label>TestCats Address:</label><label>@testCatsAddress</label></li>
-		<li><label>Wayback Machine Address:</label><label>@waybackMachineAddress</label></li>
-		<li><label>Rocket Address:</label><label>@virusTotalAddress</label></li>
+		<li><label>Shodan Address: &nbsp;</label><label> @shodanAddress</label></li>
+		<li><label>TestCats Address: &nbsp;</label><label> @testCatsAddress</label></li>
+		<li><label>Wayback Machine Address: &nbsp;</label><label> @waybackMachineAddress</label></li>
+		<li><label>VirusTotal Address: &nbsp;</label><label> @virusTotalAddress</label></li>
 	</ul>
 </div>
 
@@ -27,8 +28,6 @@
 		testCatsAddress = cat.GetBaseUrl();
 		shodanAddress = shodan.GetBaseUrl();
 		waybackMachineAddress = machine.GetBaseUrl();
-
-		//virusTotalAddress = rocket.GetBaseUrl();
-
+		virusTotalAddress = virus.GetBaseUrl();
 	}
 }

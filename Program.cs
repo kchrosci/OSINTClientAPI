@@ -38,12 +38,12 @@ namespace OSINTClientAPI
 					client.BaseAddress = new Uri("https://archive.org/");
 				});
 
-			//builder.Services.AddHttpClient<ISpaceXDataService, RESTSpaceXDataService>
-			//	(client =>
-			//	{
-			//		client.BaseAddress = new Uri("https://www.virustotal.com/vtapi/v2/");
-			//	});
+			builder.Services.AddHttpClient<IVirusTotal, RESTVirusTotal>
+				(client =>
+				{
+					client.BaseAddress = new Uri("https://www.virustotal.com/vtapi/v2/");
 
+				});
 			await builder.Build().RunAsync();
 		}
 	}
