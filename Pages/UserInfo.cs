@@ -8,22 +8,17 @@ using System.Threading.Tasks;
 
 namespace OSINTClientAPI.Pages
 {
-	public partial class Shodan
+	public partial class UserInfo
 	{
 		[Inject]
 		IShodanSearch ShodanData { get; set; }
-		string IpAddress { get; set; }
-		private ShodanDto shodan;
 
-
-		protected async Task BeginSearch()
+		private UserDto user;
+	
+		protected override async Task OnInitializedAsync()
 		{
-			shodan = await ShodanData.GetSearchResponse(IpAddress);
+			user = await ShodanData.GetUserResponse();
 		}
-
-		protected async Task SaveToTxt()
-		{
-
-		}
+		
 	}
 }

@@ -18,8 +18,6 @@ namespace OSINTClientAPI
 			var builder = WebAssemblyHostBuilder.CreateDefault(args);
 			builder.RootComponents.Add<App>("#app");
 
-			//builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("https://api.spacex.land/") });
-
 			builder.Services.AddHttpClient<IShodanSearch, RESTShodanSearch>
 				(client =>
 				{
@@ -44,6 +42,15 @@ namespace OSINTClientAPI
 					client.BaseAddress = new Uri("https://www.virustotal.com/vtapi/v2/");
 
 				});
+
+			builder.Services.AddHttpClient<ISecurityTrials, RESTSecurityTrials>
+				(client =>
+				{	
+					
+					client.BaseAddress = new Uri("https://api.securitytrails.com/v1/");
+				
+				});
+		
 			await builder.Build().RunAsync();
 		}
 	}

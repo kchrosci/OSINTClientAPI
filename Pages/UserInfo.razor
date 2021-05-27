@@ -1,0 +1,64 @@
+﻿@page "/user"
+<h1>UserInfo</h1>
+
+
+@if (user == null)
+{
+	<p><em>Loading...</em></p>
+}
+else
+{
+	<h3>Shodan - Who Am I</h3>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>CfVisitor</th>
+				<th>AcceptEncoding</th>
+				<th>XForwardedFor</th>
+				<th>Host</th>
+				<th>CfRequestId</th>
+				<th>UserAgent</th>
+			</tr>
+		</thead>
+
+		<tbody>
+
+			<tr>
+				<td>@user.CfVisitor</td>
+				<td>@user.AcceptEncoding</td>
+				<td>@user.XForwardedFor</td>
+				<td>@user.Host</td>
+				<td>@user.CfRequestId</td>
+				<td>@user.UserAgent</td>
+			</tr>
+		</tbody>
+		<thead>
+			<tr>
+				<th>Connection</th>
+				<th>XForwardedProto</th>
+				<th>Accept</th>
+				<th>CdnLoop</th>
+				<th>CfConnectingIp</th>
+				<th>CfRay</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr>
+				<td>@user.Connection</td>
+				<td>@user.XForwardedProto</td>
+				<td>@user.Accept</td>
+				<td>@user.CdnLoop</td>
+				<td>@user.CfConnectingIp</td>
+				<td>@user.CfRay</td>
+			</tr>
+
+		</tbody>
+	</table>
+}
+
+
+
+@code {
+
+}

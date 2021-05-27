@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace OSINTClientAPI.DataServices
 {
-	public interface IShodanSearch
+	public interface ISecurityTrials
 	{
-		Task<ShodanDto> GetSearchResponse(string ip);
-		Task<UserDto> GetUserResponse();
+		Task<SecurityTrialsDto> GetSearchResponse();
 		public string GetBaseUrl();
 	}
 }

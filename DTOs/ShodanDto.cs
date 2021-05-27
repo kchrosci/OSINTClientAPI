@@ -38,7 +38,5 @@ namespace OSINTClientAPI.DTOs
 		[JsonPropertyName("ip_str")]
 		public string IpStr { get; set; }
 
-		//[JsonPropertyName("ports")]
-		//public long[] Ports { get; set; }
 	}
 }
