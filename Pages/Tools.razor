@@ -1,6 +1,10 @@
-﻿@page "/base64converter"
-<h1>Base64Converter</h1>
+﻿@page "/tools"
+@using System;
+@using System.Security.Cryptography;
 
+<h1>Tools</h1>
+<h2>Converters</h2>
+<h3>Base64</h3>
 <div class="form-group">
 	<textarea class="form-control col-md-6" placeholder="Non Base64" @bind-value="NonBase64Body" @bind-value:event="oninput"></textarea>
 	<small class="form-text text-muted">This is a value to encode as base64</small>
@@ -19,9 +23,26 @@
 	<small class="form-text text-muted">This is a value to encode from base64</small>
 </div>
 
+<h3>SHA256</h3>
+<div class="form-group">
+	<textarea class="form-control col-md-6" placeholder="Non SHA256" @bind-value="NonSHA256Body" @bind-value:event="oninput"></textarea>
+	<small class="form-text text-muted">This is a value to encode as base64</small>
+</div>
+
+<button class="btn btn-primary" type="button" @onclick="ConvertToSHA256">
+	<span class="oi oi-arrow-thick-bottom"></span> Encode
+</button>
+
+<div class="form-group">
+	<textarea class="form-control col-md-6" placeholder="SHA256" @bind-value="SHA256Body" @bind-value:event="oninput"></textarea>
+	<small class="form-text text-muted">This is a value to encode from base64</small>
+</div>
+
 @code{
 	public string NonBase64Body { get; set; }
 	public string Base64Body { get; set; }
+	public string NonSHA256Body { get; set; }
+	public string SHA256Body { get; set; }
 
 	private void ConvertToBase64()
 	{
@@ -33,5 +54,18 @@
 	{
 		var base64EncodedBytes = Convert.FromBase64String(Base64Body);
 		NonBase64Body = Encoding.UTF8.GetString(base64EncodedBytes);
+	}
+
+	private void ConvertToSHA256()
+	{
+
+		var crypt = new SHA256Managed();
+		var hash = new System.Text.StringBuilder();
+		byte[] crypto = crypt.ComputeHash(Encoding.UTF8.GetBytes(NonSHA256Body));
+		foreach (byte theByte in crypto)
+		{
+			hash.Append(theByte.ToString("x2"));
+		}
+		SHA256Body=hash.ToString();
 	}
 }

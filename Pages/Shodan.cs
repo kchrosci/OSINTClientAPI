@@ -12,13 +12,13 @@ namespace OSINTClientAPI.Pages
 	{
 		[Inject]
 		IShodanSearch ShodanData { get; set; }
+		string IpAddress { get; set; }
+		private ShodanDto shodan;
 
-		private ShodanDto[] shodan;
 
-
-		protected override async Task OnInitializedAsync()
-		{
-			shodan = await ShodanData.GetQueryResponse();
+		protected async Task BeginSearch()
+		{	
+			shodan = await ShodanData.GetSearchResponse(IpAddress);
 		}
 	}
 }

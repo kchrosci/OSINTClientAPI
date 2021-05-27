@@ -16,9 +16,13 @@ namespace OSINTClientAPI.DataServices
 		{
 			_httpClient = httpClient;
 		}
-		public async Task<ShodanDto[]> GetQueryResponse()
+		public string GetBaseUrl()
 		{
-			return await _httpClient.GetFromJsonAsync<ShodanDto[]>("/shodan/host/8.8.8.8?key=OOJcF5sGJFFAjbNju2XFYFSAT9JbPo20");
+			return _httpClient.BaseAddress.ToString();
+		}
+		public async Task<ShodanDto> GetSearchResponse(string ip)
+		{
+			return await _httpClient.GetFromJsonAsync<ShodanDto>($"shodan/host/{ip}?key=OOJcF5sGJFFAjbNju2XFYFSAT9JbPo20");
 		}
 	}
 }

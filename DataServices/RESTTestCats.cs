@@ -17,7 +17,12 @@ namespace OSINTClientAPI.DataServices
 			_httpClient = httpClient;
 		}
 
-		async Task<TestCatsDto[]> ITestCats.GetCatInfo()
+		public string GetBaseUrl()
+		{
+			return _httpClient.BaseAddress.ToString();
+		}
+
+		public async Task<TestCatsDto[]> GetCatInfo()
 		{
 			return await _httpClient.GetFromJsonAsync<TestCatsDto[]>("facts/random?animal_type=cat&amount=2");
 		}

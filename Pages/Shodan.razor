@@ -2,20 +2,19 @@
 <h1>Shodan</h1>
 
 <p>This place to make reconneisance queries via Shodan REST API</p>
-<!--
+
 <div class="form-group">
-	<textarea class="form-control col-md-6" placeholder="Type your query"></textarea>
+	<textarea class="form-control col-md-6" placeholder="Type IP address" @bind-value="IpAddress" @bind-value:event="oninput"></textarea>
 	<small class="form-text text-muted">Type text inside to be searched.</small>
 </div>
 
-<button class="btn btn-success" type="button">
-	<span class="oi oi-magnifying-glass"></span> Search
+<button class="btn btn-primary" type="button" @onclick="BeginSearch">
+	<span class="oi oi-arrow-thick-bottom"></span> Search
 </button>
--->
 
 @if (shodan == null)
 {
-	<p><em>Loading...</em></p>
+
 }
 else
 {
@@ -25,19 +24,21 @@ else
 				<th>Country Name</th>
 				<th>Country Code</th>
 				<th>ISP</th>
+				<th>Hostnames</th>
 			</tr>
 		</thead>
 		<tbody>
-			@foreach (var launch in shodan)
-			{
-				<tr>
-					<td>@launch.CountryName</td>
-					<td>@launch.CountryCode</td>
-				</tr>
-			}
+
+			<tr>
+				<td>@shodan.RegionCode</td>
+				<td>@shodan.CountryCode</td>
+				<td>@shodan.Ip</td>
+				<td></td>
+			</tr>
+
 		</tbody>
 	</table>
 }
 @code {
-
+	
 }

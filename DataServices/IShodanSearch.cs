@@ -8,6 +8,7 @@ namespace OSINTClientAPI.DataServices
 {
 	public interface IShodanSearch
 	{
-		Task<ShodanDto[]> GetQueryResponse();
+		Task<ShodanDto> GetSearchResponse(string ip);
+		public string GetBaseUrl();
 	}
 }

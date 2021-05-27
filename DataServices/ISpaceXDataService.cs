@@ -9,5 +9,6 @@ namespace OSINTClientAPI.DataServices
 	public interface ISpaceXDataService
 	{
 		Task<LaunchDto[]> GetAllLaunches();
+		public string GetBaseUrl();
 	}
 }

@@ -9,5 +9,6 @@ namespace OSINTClientAPI.DataServices
 	public interface ITestCats
 	{
 		public Task<TestCatsDto[]>GetCatInfo();
+		public string GetBaseUrl();
 	}
 }

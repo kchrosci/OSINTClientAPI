@@ -16,6 +16,10 @@ namespace OSINTClientAPI.DataServices
 		{
 			_httpClient = httpclient;
 		}
+		public string GetBaseUrl()
+		{
+			return _httpClient.BaseAddress.ToString();
+		}
 
 		public async Task<LaunchDto[]> GetAllLaunches()
 		{

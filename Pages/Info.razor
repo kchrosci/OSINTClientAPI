@@ -1,17 +1,33 @@
 ﻿@page "/info"
-@inject HttpClient _httpClient
-<h3>Info Page</h3>
+@inject DataServices.ISpaceXDataService rocket;
+@inject DataServices.ITestCats cat;
+@inject DataServices.IShodanSearch shodan;
+
+
+<h1>Info Page</h1>
+<h3>Endopints used:</h3>
 <div>
-	<label>Shodan Address:</label><label>@shodanAddress</label>
-	<label>TestCats Address:</label><label>@testCatsAddress</label>
+	<ul>
+		<li><label>Shodan Address:</label><label>@shodanAddress</label></li>
+		<li><label>TestCats Address:</label><label>@testCatsAddress</label></li>
+		<li><label>Rocket Address:</label><label>@rocketAddress</label></li>
+		<li><label>Rocket Address:</label><label>@virusTotalAddress</label></li>
+	</ul>
 </div>
 
 @code {
 	string shodanAddress;
 	string testCatsAddress;
+	string rocketAddress;
+	string virusTotalAddress;
 
 	protected override void OnInitialized()
 	{
 		base.OnInitialized();
+		testCatsAddress = cat.GetBaseUrl();
+		shodanAddress = shodan.GetBaseUrl();
+		rocketAddress = rocket.GetBaseUrl();
+		virusTotalAddress = rocket.GetBaseUrl();
+
 	}
 }
