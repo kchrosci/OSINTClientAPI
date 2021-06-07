@@ -1,18 +1,15 @@
 ﻿@page "/security"
-<h1>Shodan</h1>
 
-@if (security == null)
-{
+<h1>SecurityTrails</h1>
 
-}
-else { }
-
-<!--
-<p>This place to make reconneisance queries via Shodan REST API</p>
+<p>The SecurityTrails API allows you to programmatically access all IP, 
+	DNS, WHOIS, and company related information that is available in the 
+	SecurityTrails Web Platform and beyond. It is based on REST principles 
+	and allows you to fetch data mainly using HTTP GET and POST methods. </p>
 
 <div class="form-group">
-	<textarea class="form-control col-md-6" placeholder="Type IP address" @bind-value="IpAddress" @bind-value:event="oninput"></textarea>
-	<small class="form-text text-muted">Type text inside to be searched.</small>
+	<textarea class="form-control col-md-6" placeholder="Type IP address e.x. 8.8.8.8" @bind-value="IpAddress" @bind-value:event="oninput"></textarea>
+	<small class="form-text text-muted">After typing address IP use Seach button to proceed.</small>
 </div>
 
 <button class="btn btn-success" type="button" @onclick="BeginSearch">
@@ -20,51 +17,21 @@ else { }
 </button>
 
 
-@if (shodan == null)
+@if (security == null)
 {
 
 }
 else
 
-{<h3>Shodan IP result</h3>
-	<table class="table">
-		<thead>
-			<tr>
-				<th>IP</th>
-				<th>ISP</th>
-				<th>ORG</th>
-				<th>CountryName</th>
-				<th>CountryCode</th>
-				<th>RegionCode</th>
-				<th>City</th>
-				<th>Latitude</th>
-				<th>Longitude</th>
-				<th>LastUpdate</th>
-			</tr>
-		</thead>
-		<tbody>
+{<h3>SecurityTrials query result</h3>
+	<h4>ERROR: Page in maintance.</h4>
 
-			<tr>
-				<td>@shodan.IpStr</td>
-				<td>@shodan.Isp</td>
-				<td>@shodan.Org</td>
-				<td>@shodan.CountryName</td>
-				<td>@shodan.CountryCode</td>
-				<td>@shodan.RegionCode</td>
-				<td>@shodan.City</td>
-				<td>@shodan.Latitude</td>
-				<td>@shodan.Longitude</td>
-				<td>@shodan.LastUpdate</td>
-			</tr>
-
-		</tbody>
-	</table>
 }
 
 <button class="btn btn-primary" type="button" @onclick="SaveToTxt">
 	<span class="oi oi-arrow-thick-bottom"></span> Save Result
 </button>
--->
+
 @code {
 
 

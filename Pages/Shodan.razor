@@ -1,11 +1,17 @@
 ﻿@page "/shodan"
 <h1>Shodan</h1>
 
-<p>This place to make reconneisance queries via Shodan REST API</p>
+<p>
+	The Shodan API is the easiest way to provide users
+	access to the Shodan data. The API provides
+	access to all data stored in Shodan, allowing you to
+	get exactly the information you want.
+</p>
 
+<p>This text field is used to perform reconnaissance queries through the Shodan REST API</p>
 <div class="form-group">
-	<textarea class="form-control col-md-6" placeholder="Type IP address" @bind-value="IpAddress" @bind-value:event="oninput"></textarea>
-	<small class="form-text text-muted">Type text inside to be searched.</small>
+	<textarea class="form-control col-md-6" placeholder="Type IP address e.x. 8.8.8.8" @bind-value="IpAddress" @bind-value:event="oninput"></textarea>
+	<small class="form-text text-muted">After typing address IP use Seach button to proceed.</small>
 </div>
 
 <button class="btn btn-success" type="button" @onclick="BeginSearch">

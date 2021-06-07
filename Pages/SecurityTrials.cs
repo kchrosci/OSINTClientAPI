@@ -14,9 +14,10 @@ namespace OSINTClientAPI.Pages
 		ISecurityTrials SecurityTrialsService { get; set; }
 
 		private SecurityTrialsDto security;
+		string IpAddress { get; set; }
 
 
-		protected override async Task OnInitializedAsync()
+		protected async Task BeginSearch()
 		{
 			security = await SecurityTrialsService.GetSearchResponse();
 		}

@@ -24,16 +24,16 @@ namespace OSINTClientAPI
 					client.BaseAddress = new Uri("https://api.shodan.io/");
 				});
 
-			builder.Services.AddHttpClient<ITestCats, RESTTestCats>
-				(client =>
-				{
-					client.BaseAddress = new Uri("https://cat-fact.herokuapp.com/");
-				});
-
 			builder.Services.AddHttpClient<IWaybackMachine, RESTWaybackMachine>
 				(client =>
 				{
 					client.BaseAddress = new Uri("https://archive.org/");
+				});
+
+			builder.Services.AddHttpClient<ITestCats, RESTTestCats>
+				(client =>
+				{
+					client.BaseAddress = new Uri("https://cat-fact.herokuapp.com/");
 				});
 
 			builder.Services.AddHttpClient<IVirusTotal, RESTVirusTotal>
@@ -45,12 +45,12 @@ namespace OSINTClientAPI
 
 			builder.Services.AddHttpClient<ISecurityTrials, RESTSecurityTrials>
 				(client =>
-				{	
-					
+				{
+
 					client.BaseAddress = new Uri("https://api.securitytrails.com/v1/");
-				
+
 				});
-		
+
 			await builder.Build().RunAsync();
 		}
 	}

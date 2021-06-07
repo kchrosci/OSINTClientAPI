@@ -2,9 +2,9 @@
 @using System;
 @using System.Security.Cryptography;
 
-<h1>Tools</h1>
-<h2>Converters</h2>
-<h3>Base64</h3>
+<h1>Cybersecurity Tools</h1>
+<p>Section allows user to take advantage of tools to help with daily cyber security work</p>
+<h3>Base64 Converter</h3>
 <div class="form-group">
 	<textarea class="form-control col-md-6" placeholder="Non Base64" @bind-value="NonBase64Body" @bind-value:event="oninput"></textarea>
 	<small class="form-text text-muted">This is a value to encode as base64</small>
@@ -20,13 +20,13 @@
 
 <div class="form-group">
 	<textarea class="form-control col-md-6" placeholder="Base64" @bind-value="Base64Body" @bind-value:event="oninput"></textarea>
-	<small class="form-text text-muted">This is a value to encode from base64</small>
+	<small class="form-text text-muted">This is a value to decode from base64</small>
 </div>
 
-<h3>SHA256</h3>
+<h3>SHA256 Converter</h3>
 <div class="form-group">
 	<textarea class="form-control col-md-6" placeholder="Non SHA256" @bind-value="NonSHA256Body" @bind-value:event="oninput"></textarea>
-	<small class="form-text text-muted">This is a value to encode as base64</small>
+	<small class="form-text text-muted">This is a value to encode as SHA256</small>
 </div>
 
 <button class="btn btn-primary" type="button" @onclick="ConvertToSHA256">
@@ -35,7 +35,7 @@
 
 <div class="form-group">
 	<textarea class="form-control col-md-6" placeholder="SHA256" @bind-value="SHA256Body" @bind-value:event="oninput"></textarea>
-	<small class="form-text text-muted">This is a value to encode from base64</small>
+	<small class="form-text text-muted">This is a result value in SHA256 format</small>
 </div>
 
 @code{

@@ -3,16 +3,17 @@
 @inject DataServices.IShodanSearch shodan;
 @inject DataServices.IWaybackMachine machine;
 @inject DataServices.IVirusTotal virus;
-
+@inject DataServices.ISecurityTrials security;
 
 <h1>Info Page</h1>
 <h3>Endopints used:</h3>
 <div>
 	<ul>
-		<li><label>Shodan Address: &nbsp;</label><label> @shodanAddress</label></li>
-		<li><label>TestCats Address: &nbsp;</label><label> @testCatsAddress</label></li>
-		<li><label>Wayback Machine Address: &nbsp;</label><label> @waybackMachineAddress</label></li>
-		<li><label>VirusTotal Address: &nbsp;</label><label> @virusTotalAddress</label></li>
+		<li><label>Shodan Address: &nbsp;</label><a href="@shodanAddress"><label>@shodanAddress</label></a></li>
+		<li><label>TestCats Address: &nbsp;</label><a href="@testCatsAddress"><label>@testCatsAddress</label></a></li>
+		<li><label>Wayback Machine Address: &nbsp;</label><a href="@waybackMachineAddress"><label>@waybackMachineAddress</label></a></li>
+		<li><label>VirusTotal Address: &nbsp;</label><a href="@virusTotalAddress"><label>@virusTotalAddress</label></a></li>
+		<li><label>SecurityTrials Address: &nbsp;</label><a href="@securityTrialsAddress"><label>@securityTrialsAddress</label></a></li>
 	</ul>
 </div>
 
@@ -21,6 +22,7 @@
 	string testCatsAddress;
 	string waybackMachineAddress;
 	string virusTotalAddress;
+	string securityTrialsAddress;
 
 	protected override void OnInitialized()
 	{
@@ -29,5 +31,6 @@
 		shodanAddress = shodan.GetBaseUrl();
 		waybackMachineAddress = machine.GetBaseUrl();
 		virusTotalAddress = virus.GetBaseUrl();
+		securityTrialsAddress = security.GetBaseUrl();
 	}
 }

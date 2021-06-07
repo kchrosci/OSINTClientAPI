@@ -1,15 +1,25 @@
 ﻿@page "/wayback"
 <h1>Wayback Machine</h1>
 
-<p>using this section the user is able to download information about page from the archive.</p>
+<p>This simple API for Wayback is a test to see if 
+	a given url is archived and currenlty accessible 
+	in the Wayback Machine. This API is useful for 
+	providing a 404 or other error handler which checks
+	Wayback to see if it has an archived copy ready to display. 
+	When available, the url is the link to the archived snapshot 
+	in the Wayback Machine At this time, archived_snapshots just returns
+	a single closest snapshot, but additional snapshots may be added in the future.</p>
 
+<p>This text field is used to perform reconnaissance queries to download information about page from the archive.</p>
 <div class="form-group">
-	<textarea class="form-control col-md-6" placeholder="Enter URL e.g. facebook.com" @bind-value="Url" @bind-value:event="oninput"></textarea>
-	<small class="form-text text-muted">Type text inside to be searched.</small>
+	<textarea class="form-control col-md-6" placeholder="Type URL e.g. facebook.com" @bind-value="Url" @bind-value:event="oninput"></textarea>
+	<small class="form-text text-muted">After typing URL address use Search button to proceed.</small>
 </div>
+
+<p>This text field is used to perform reconnaissance queries to download information about page at a specified timestamp from the archive.</p>
 <div class="form-group">
 	<textarea class="form-control col-md-6" placeholder="Enter timestamp in format (YYYYMMDDhhmmss) e.g.20060101 " @bind-value="Timestamp" @bind-value:event="oninput"></textarea>
-	<small class="form-text text-muted">Type text inside to be searched.</small>
+	<small class="form-text text-muted">After typing URL address and timestamp use Search button to proceed.</small>
 </div>
 
 <button class="btn btn-success" type="button" @onclick="BeginSearch">
